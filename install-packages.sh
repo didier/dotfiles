@@ -23,6 +23,9 @@ brew cask install figma
 brew cask install hyper
 brew install broot
 
+# Git Goodies
+curl -fsSL git.io/gg.sh | bash
+
 # Set up Hyper
 hyper i hyper-font-ligatures hyper-samewd hyper-pane hyper-quit hyper-fading-scrollbar
 
