@@ -6,8 +6,14 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # Yummygum
-alias yg="cd && cd Projects/Yummygum"
-alias yga="yg && code && open https://about:blank"
+alias ygd="cd && cd Projects/Yummygum"
+
+function yg (){
+  cd;
+  cd Projects/Yummygum
+  cd "$1-website"
+  $2
+}
 
 # Git
 alias g="git"
@@ -32,8 +38,24 @@ alias i="yarn"
 # alias branch="git rev-parse --abbrev-ref HEAD"
 # alias gpu="git push --set-upstream origin $(branch) && echo '\n\u001b[32m⸙\u001b[0m Remote Branch ⇒ \u001b[32m$(branch)\u001b[0m'"
 
-# Preview
-alias p="qlmanage -p"
+function gpu(){
+  BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+  git push --set-upstream origin $(branch)
+  echo '\n\u001b[32m⸙\u001b[0m Remote Branch ⇒ \u001b[32m$(branch)\u001b[0m'
+}
+
+function prune(){
+  git fetch -p
+  for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); 
+  do git branch -D $branch; done
+}
+
 
 # Vim
 alias vi=vim
+
+# Preview
+alias p="qlmanage -p"
+
+# Open VS Code
+alias c="code -r ."

@@ -21,6 +21,22 @@ function qrip(){
   npx qrcode "http://$(npx internal-ip -4)"
 }
 
+function work(){
+  clear
+  code -r . 
+  open http://localhost:3000
+  yarn dev 
+}
+
+function x (){
+  exit
+}
+
+function share(){
+  echo "Sharing http://$(internal-ip -4):3000 via AirDrop..."
+  terminal-share -service airdrop -url "http://$(internal-ip -4):3000"
+}
+
 function devip(){
   while getopts 'pq' flag; do
     case "${flag}" in
@@ -172,7 +188,7 @@ function run() {
 }
 
 function md() {
-  mkdir -p "$@" && cd "$@"
+  mkdir -p "$1" && cd "$1"
 }
 
 function localip() {

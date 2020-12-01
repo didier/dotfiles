@@ -9,10 +9,14 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 18,
+    letterSpacing: 0.75,
 
     // font family with optional fallbacks
+    // fontFamily: "'Ligalex Mono', 'JetBrains Mono', FiraCode-Retina, 'Fira Code', monospace",
+
     fontFamily: '"JetBrains Mono","Operator Mono Lig", "Operator Mono", "Victor Mono","Fira Code", "FiraCode-Retina", "FiraCode", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    // fontFamily: 'Operator Mono Lig, monospace',
     // fontFamily: '"Ligalex Mono","JetBrains Mono","Operator Mono Lig", "Operator Mono", "Victor Mono","Fira Code", "FiraCode-Retina", "FiraCode", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
@@ -184,7 +188,10 @@ module.exports = {
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: [],
+  
+  // localPlugins: [
+  //   'themer-hyper-dark'
+  // ],
   plugins: [
     'hyper-font-ligatures',
     'hyper-samewd',

@@ -115,3 +115,7 @@ prompt pure
 TK_SILENCE_DEPRECATION=1
 
 unalias gg
+# unalias ggexport PATH="/Users/didier/.deta/bin:$PATH"
+# export PATH="/Users/didier/.deta/bin:$PATH"
+# export PATH="~/.composer/vendor/bin"
+export PATH=$PATH:$HOME/.composer/vendor/bin
